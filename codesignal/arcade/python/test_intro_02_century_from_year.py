@@ -27,8 +27,9 @@ class TestIntro02CenturyFromYear(TestCase):
     def test_other_cases(self):
         """Comprehensive testing based in the problem guaranteed constraints"""
         for cent in range(1, 22):
-            start = (cent - 1) * 100 + 1
-            for year in range(start, start + 100):
+            start = 100 * cent - 99
+            end = start + 100
+            for year in range(start, end):
                 self.assertEqual(solution(year), cent)
 
 if __name__ == "__main__":
