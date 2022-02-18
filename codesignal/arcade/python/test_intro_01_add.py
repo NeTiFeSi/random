@@ -27,7 +27,8 @@ class TestIntro01Add(TestCase):
         """Comprehensive testing based in the problem guaranteed constraints"""
         for i in range(-1000, 1001):
             for j in range(-1000, 1001):
-                self.assertEqual(solution(i,j), i + j)
+                with self.subTest(param1=i, param2=j):
+                    self.assertEqual(solution(i, j), i + j)
 
 if __name__ == "__main__":
     main()

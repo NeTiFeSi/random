@@ -30,7 +30,8 @@ class TestIntro02CenturyFromYear(TestCase):
             start = 100 * cent - 99
             end = start + 100
             for year in range(start, end):
-                self.assertEqual(solution(year), cent)
+                with self.subTest(year=year):
+                    self.assertEqual(solution(year), cent)
 
 if __name__ == "__main__":
     main()
